@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+body{
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(143, 202, 182);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header{
+    background-color:aquamarine;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1{
+    color:cornflowerblue;
+    font-family: 'Righteous', cursive;
+    text-shadow: 2px 2px 3px rgb(54, 189, 144);
+    font-size: 6vw !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h2{
+    font-weight: bold !important;
+
 }
 
-.App-link {
-  color: #61dafb;
+.btn:focus, input:focus{
+    box-shadow: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.box{
+    background-color: rgba(255, 255, 255, 0.7); 
+    min-height: 300px;
+    border-radius: 10px; 
+    margin: auto;
+    box-shadow: inset -1px -1px 4px 0px rgba(73, 112, 158, 0.6), inset 0px 2px 8px 0px rgb(255, 255, 255);
+}
+
+.btn{
+    border-radius: 20px !important;
+}
+
+.botonBox:hover{
+    background-color: rgb(143, 202, 182);
+    border: 2px solid transparent !important;
+}
+
+.botonCancel:hover{
+    background-color:rgb(165, 165, 165);
+}
+
+.botonBox{
+    background-color: transparent;
+    border: 2px solid rgb(143, 202, 182) !important;
+    border-radius: 20px;
+}
+
+.botonCancel{
+    border: 2px solid rgb(165, 165, 165) !important;
+}
+
+.form-control{
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+.list-group-item{
+    border: none !important;
+}
+
+.list-group-item:hover{
+    background-color: rgba(127, 255, 212, 0.6) !important;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 576px){
+    body, .botonBox, .btn{
+        font-size: 14px !important;
+    }
+    h1{
+        font-size: xx-large !important;
+    }
+    h2{
+        font-size: 1.2rem !important;
+    }
+    .col-form-label{
+        font-size: 18px !important;
+    }
+    main{
+        padding: 0px !important;
+    }
+    #main{
+        padding-top: 0px !important;
+    }
+    .box{
+        width: 95% !important;
+        box-shadow: none !important;
+        margin-top: 10px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .list-group-item{
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 1000px){
+    #addCuentaBox, #historialBox{
+        width: 50% !important;
+    }
 }
