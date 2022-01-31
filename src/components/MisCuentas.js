@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react';
-import { listReducer } from '../helpers/listReducer';
+import React, { useContext, useEffect } from 'react';
 import { useForm } from '../hooks/useForm';
 import { AccountContext } from './AccountContext';
 import { Cuenta } from './Cuenta';
@@ -17,6 +16,9 @@ export const MisCuentas = () => {
     let {setCurrentId} = useContext(AccountContext);
     const {addCuenta, setAddCuenta} = useContext(AccountContext);
     const {setCuenta} = useContext(AccountContext);
+    const {setCancel} = useContext(AccountContext);
+    const {setGasto} = useContext(AccountContext);
+    const {backToAccounts, setBackToAccounts} = useContext(AccountContext);
 
     const  [{title}, handleTitleInputChange, resetTitle]  = useForm({
         title: '',
@@ -29,8 +31,29 @@ export const MisCuentas = () => {
         localStorage.setItem('cuentas', JSON.stringify(cuentas));
     }, [cuentas]);
 
-    const showCuenta = () => {
+    useEffect(() => {
+        
+        const btnBackToAccounts = document.querySelector('#btnBackToAccounts');
+        if (backToAccounts){
+            btnBackToAccounts.classList = 'btn btn-outline-success m-auto mt-2 d-block px-5 py-0 py-sm-1 fw-bold'
+        }else{
+            btnBackToAccounts.classList = 'd-none'
+            };
+    }, [backToAccounts]);
 
+    const showCuenta = (id) => {
+        setCurrentId(id);
+        const addCuentaBox = document.querySelector('#addCuentaBox');
+        const historialBox = document.querySelector('#historialBox');
+        const cuentaBox = document.querySelector('#cuentaBox');
+        
+        addCuentaBox.classList = 'd-none'
+        historialBox.classList = 'd-none'
+        cuentaBox.classList = 'box w-75'
+        setCuenta(false)
+        setCancel(false)
+        setGasto(true)
+        setBackToAccounts(true)
     }
 
     const handleSubmit = (e) => {
@@ -146,6 +169,18 @@ export const MisCuentas = () => {
                 }}
                 >
                     Nueva Cuenta
+            </button>
+            <button
+                id='btnBackToAccounts'
+                onClick={() => {
+                    
+                    setCancel(true);
+                    setBackToAccounts(false);
+
+                }}
+                className='btn btn-outline-success m-auto mt-2 d-block px-5 py-0 py-sm-1 fw-bold'
+            >
+                Volver a Mis Cuentas
             </button>
 
         </>

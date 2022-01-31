@@ -2,7 +2,6 @@ import React from 'react';
 
 export const QuienDebeItem = ({members, cuenta}) => {
 
-    const {name, money} = members || {name:'', money:0};
     const {total} = cuenta || 0;
 
     const pagoInd = Math.trunc(Number(total)/members.length);
@@ -11,25 +10,58 @@ export const QuienDebeItem = ({members, cuenta}) => {
         return (Number(b.money-a.money));
     })
 
+    for(let member of members){
+        member.deuda = member.money - pagoInd;                    
+    }
+
     console.log(members)
 
+    const deudaList = [];
+
+    for(let i=0; i<members.length; i++){
+        
+        for(let j=members.length-1; j>=0; j--){
+            const deudaMayor = members[i].deuda;
+            const deudaMenor = members[j].deuda;
+            
+            if(deudaMenor>=0 || deudaMayor<=0 || members[i]===members[j]){
+                continue;
+            };
+
+            if(deudaMayor >= Math.abs(deudaMenor)){
+                const textoDeuda = `
+                    ${members[j].name} le debe ${Math.abs(deudaMenor)}€ a ${members[i].name}
+                `;
+                members[i].deuda -= Math.abs(deudaMenor);
+                members[j].deuda = 0;
+                deudaList.push(textoDeuda);
+            }else{
+                const textoDeuda = `
+                    ${members[j].name} le debe ${Math.abs(deudaMayor)}€ a ${members[i].name}
+                `;
+                members[j].deuda += Math.abs(deudaMayor);
+                members[i].deuda = 0;
+                deudaList.push(textoDeuda);
+            }
+        }
+    }
+
+
   return (
-    <div>
-        {/* <li 
-            key={member.id+Math.random()}
-            className="list-group-item w-100 w-sm-75 mx-0 py-3 bg-transparent d-flex align-items-center justify-content-between"
-        >
-            <div 
-                className='d-flex justify-content-between w-100'
-            >
-                <p className='fw-bold'>
-                    {member.name}                     
-                </p>
-                <p>
-                    {member.money} €                    
-                </p>
-            </div>
-        </li> */}
-    </div>
+    <>
+        {
+            deudaList.map(textoDeuda => {
+                return (
+                    <>
+                        <li 
+                        className="listWho w-75 mb-0 py-3 m-auto fs-5 bg-transparent"
+                        >
+                            {textoDeuda}
+                        </li>                
+                    </>                    
+                )
+            })
+        }
+    </>
   );
 };

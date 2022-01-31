@@ -4,6 +4,7 @@ import { AccountContext } from './AccountContext';
 export const ConfirmGasto = ({cuenta}) => {
 
     let {setNewGasto, setNumberOptions, resetDescription, resetTotal} = useContext(AccountContext);
+    const {setGasto} = useContext(AccountContext);
 
     const members = useMemo(() => {
         return cuenta.members || [{}];
@@ -64,12 +65,30 @@ export const ConfirmGasto = ({cuenta}) => {
     }
 
   return (
-    <button
-        id='btnConfirmMember'
-        onClick={handleConfirmGasto}
-        className='botonBox mt-1 btn-block w-100 m-auto'
-    >
-        Aceptar
-    </button>
+      <>
+        <button
+            id='btnConfirmMember'
+            onClick={(e) => {
+                handleConfirmGasto(e);
+                setGasto(true);
+            }}
+            className='botonBox mt-1 btn-block w-100 m-auto'
+        >
+            Aceptar
+        </button>
+        <button
+            id='btnCancelMember'
+            onClick={() => {
+                resetTotal();
+                resetDescription();
+                setGasto(true);
+                setNewGasto(false);
+                setNumberOptions([1]);
+            }}
+            className='botonBox mt-1 btn-block w-100 m-auto'
+        >
+            Cancelar
+        </button>      
+      </>
   );
 };

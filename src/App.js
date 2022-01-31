@@ -6,7 +6,9 @@ import { listReducer } from './helpers/listReducer';
 import { useForm } from './hooks/useForm';
 
 const init = () => {
-  return JSON.parse(localStorage.getItem('cuentas')) || [];
+  const histCuentas = JSON.parse(localStorage.getItem('cuentas')) || [];
+  
+  return histCuentas;
 }
 
 function App() {
@@ -15,16 +17,22 @@ function App() {
   const [addCuenta, setAddCuenta] = useState(false);
   const [cuenta, setCuenta] = useState(false);
   const [cancel, setCancel] = useState(true);
+  const [gasto, setGasto] = useState(true);
   const [currentId, setCurrentId] = useState(0);
   const [newGasto, setNewGasto] = useState(0);
   const [numberOptions, setNumberOptions] = useState([1]);
   const [inputOption, setInputOption] = useState([]);
+  const [backToAccounts, setBackToAccounts] = useState(false);
   const  [{description}, handleDescInputChange, resetDescription]  = useForm({
     description: '',
   });
   const  [{total}, handleTotalInputChange, resetTotal]  = useForm({
     total: '',
   });
+
+  if(cuentas.length > 10){
+    cuentas.splice(10, cuentas.length-10);
+  }
 
   return (
     <AccountContext.Provider value={{
@@ -49,9 +57,13 @@ function App() {
         handleTotalInputChange, 
         resetTotal,
         inputOption, 
-        setInputOption
+        setInputOption,
+        gasto, 
+        setGasto,
+        backToAccounts, 
+        setBackToAccounts
       }}>
-        <header className="d-flex justify-content-center align-content-center">
+        <header className="d-flex justify-content-center align-content-center position-fixed w-100 m-auto">
           <h1 className='w-75 my-2'>BillShare</h1>
         </header>
         <main id='main' className='text-center py-3'>

@@ -28,7 +28,7 @@ export const Cuenta = () => {
         }else{
             cuentaBox.classList = 'd-none'
             };
-    }, [cuenta,setAddCuenta,setCancel]);
+    }, [cuenta,setAddCuenta,setCancel]);    
 
     let currentCuenta = {};
 
@@ -43,9 +43,11 @@ export const Cuenta = () => {
         <div className='row justify-content-around'>
             <NewGasto cuenta={currentCuenta} />
             <Gastos />
+            <hr className='accountSep'/>
             <Balance />
+            <hr className='accountSep'/>
         </div>
-        <div className='row px-5'>
+        <div className='row px-3'>
             <QuienDebe />
         </div>
     </div>

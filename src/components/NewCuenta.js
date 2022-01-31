@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import { AccountContext } from './AccountContext';
 
-export const NewCuenta = ({title, name, handleAddMember, handleSubmit, handleTitleInputChange, handleNameInputChange}) => {
+export const NewCuenta = ({title, handleAddMember, handleSubmit, handleTitleInputChange}) => {
   
     const {addCuenta, setAddCuenta} = useContext(AccountContext);
     const {setCuenta} = useContext(AccountContext);
-    const {cancel, setCancel} = useContext(AccountContext);
+    const {cancel, setCancel, setGasto, setBackToAccounts} = useContext(AccountContext);
 
     useEffect(() => {
       
@@ -18,10 +18,12 @@ export const NewCuenta = ({title, name, handleAddMember, handleSubmit, handleTit
             cuentaBox.classList = 'd-none'
             setCuenta(false)
             setCancel(false)
+            setGasto(true)
+            setBackToAccounts(true)
         }else{
             addCuentaBox.classList = 'd-none'
         };
-    }, [addCuenta,setCuenta,setCancel]);
+    }, [addCuenta,setCuenta,setCancel,setBackToAccounts,setGasto]);
     
     useEffect(() => {
       
@@ -34,10 +36,11 @@ export const NewCuenta = ({title, name, handleAddMember, handleSubmit, handleTit
             cuentaBox.classList = 'd-none'
             setCuenta(false)
             setAddCuenta(false)
+            setGasto(false)
         }else{
             historialBox.classList = 'd-none'
         };
-    }, [cancel,setCuenta,setAddCuenta]);
+    }, [cancel,setCuenta,setAddCuenta, setGasto]);
   
     return (
 
@@ -83,13 +86,13 @@ export const NewCuenta = ({title, name, handleAddMember, handleSubmit, handleTit
             </button>
             <button
                 onClick={() => {
+                    setCancel(true);
                     const divAddMember = document.querySelector('#divAddMember');
                     const inputNewMember = document.getElementsByClassName('inputNewMember');
 
                     for(let i=inputNewMember.length-1; i>=0; i--){                        
                         divAddMember.removeChild(inputNewMember[i]);
                     }
-                    setCancel(true);
 
                 }}
                 className='botonBox botonCancel mt-1 w-100'

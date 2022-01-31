@@ -1,10 +1,14 @@
 body{
     font-family: Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgb(143, 202, 182);
+    background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 50%,rgba(229, 229, 229,0.04) 50%, rgba(229, 229, 229,0.04) 100%),radial-gradient(circle at 66% 97%, rgba(36, 36, 36,0.04) 0%, rgba(36, 36, 36,0.04) 50%,rgba(46, 46, 46,0.04) 50%, rgba(46, 46, 46,0.04) 100%),radial-gradient(circle at 86% 7%, rgba(40, 40, 40,0.04) 0%, rgba(40, 40, 40,0.04) 50%,rgba(200, 200, 200,0.04) 50%, rgba(200, 200, 200,0.04) 100%),radial-gradient(circle at 15% 16%, rgba(99, 99, 99,0.04) 0%, rgba(99, 99, 99,0.04) 50%,rgba(45, 45, 45,0.04) 50%, rgba(45, 45, 45,0.04) 100%),radial-gradient(circle at 75% 99%, rgba(243, 243, 243,0.04) 0%, rgba(243, 243, 243,0.04) 50%,rgba(37, 37, 37,0.04) 50%, rgba(37, 37, 37,0.04) 100%),linear-gradient(90deg, rgb(34, 222, 237),rgb(143,202,182));
+    padding-top: 6vh;
 }
 
 header{
     background-color:aquamarine;
+    top: 0px;
+    height: 6vh;
+    z-index: 10;
 }
 
 h1{
@@ -12,6 +16,7 @@ h1{
     font-family: 'Righteous', cursive;
     text-shadow: 2px 2px 3px rgb(54, 189, 144);
     font-size: 6vw !important;
+    z-index: 2 !important;
 }
 
 h2{
@@ -24,7 +29,7 @@ h2{
 }
 
 .box{
-    background-color: rgba(255, 255, 255, 0.7); 
+    background-color: rgba(255, 255, 255, 0.5); 
     min-height: 300px;
     border-radius: 10px; 
     margin: auto;
@@ -73,10 +78,14 @@ h2{
     margin-bottom: 1px !important;
 }
 
-.list-group-item:hover{
+.selectable-list:hover{
     background-color: rgba(127, 255, 212, 0.6) !important;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.accountSep{
+    display: none;
 }
 
 @media (max-width: 576px){
@@ -89,7 +98,7 @@ h2{
     h2{
         font-size: 1.2rem !important;
     }
-    .col-form-label{
+    .col-form-label, .listWho{
         font-size: 18px !important;
     }
     main{
@@ -105,8 +114,17 @@ h2{
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
-    .list-group-item{
+    .list-group-item, .costGasto{
         width: 100% !important;
+    }
+    .accountSep{
+        display: block;
+        width: 100% !important;
+        margin-top: 50px;
+        height: 5px !important;
+        color: rgb(143, 202, 182) !important;
+        opacity: 1;
+        box-sizing:content-box;
     }
 }
 

@@ -22,23 +22,19 @@ export const Balance = () => {
     }
 
     return (
-        <div className='col-12 col-sm-5 mt-4'>
+        <div id='divBalance' className='col-12 col-sm-5 mt-4'>
             <h2>Gasto individual</h2>
             <hr className='my-0'/>
             <div>
                 <ul className="list-group list-group-flush text-start mt-3">
+                    
                     {  
                         members.map( (member) => {
                             return (
-                                <>
-                                    <BalanceItem 
-                                    key={member.id+Math.random()}
-                                    member={member}
-                                    />
-                                    <hr
-                                    key={member.id+Math.random()}
-                                    />
-                                </>
+                                <BalanceItem 
+                                key={member.id+Math.random()+1}
+                                member={member}
+                                />
                             );
                         })
                     }

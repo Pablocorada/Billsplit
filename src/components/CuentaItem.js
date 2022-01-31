@@ -5,10 +5,10 @@ export const CuentaItem = ({cuenta,i,showCuenta, handleDelete}) => {
         <div>
             <li 
                 key={cuenta.id}
-                className="list-group-item w-75 m-auto py-3 bg-transparent d-flex align-items-center justify-content-between"
+                className="list-group-item selectable-list w-75 m-auto py-3 bg-transparent d-flex align-items-center justify-content-between"
             >
                 <span 
-                    className='align-self-center'
+                    className='align-self-center d-block w-100'
                     onClick={() => {showCuenta (cuenta.id)}} 
                 >
                     {i + 1}. {cuenta.title}

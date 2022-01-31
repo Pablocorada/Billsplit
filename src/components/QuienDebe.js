@@ -25,17 +25,17 @@ export const QuienDebe = () => {
     <div className='mt-4'>
         <h2>¿Quién debe a quién?</h2>
         <hr className='my-0'/>
-        <div>
-                <ul className="list-group list-group-flush text-start mt-3">
-                    {                          
-                      <QuienDebeItem 
-                      key={members.id+Math.random()}
-                      members={members}
-                      cuenta={cuenta}
-                      />                               
-                    }
-                </ul>
-            </div>
+        <div className='mb-4'>
+            <ul className="list-group text-start mt-3">
+                {                          
+                    <QuienDebeItem 
+                    key={members.id+Math.random()}
+                    members={members}
+                    cuenta={cuenta}
+                    />                               
+                }
+            </ul>
+        </div>
     </div>
     );
 };

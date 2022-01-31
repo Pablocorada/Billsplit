@@ -1,12 +1,30 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { AccountContext } from './AccountContext';
 import { GastosItem } from './GastosItem';
 
 export const Gastos = () => {
 
     let {setNewGasto} = useContext(AccountContext);
+    let {gasto, setGasto} = useContext(AccountContext);
     let {currentId} = useContext(AccountContext);
     let {cuentas} = useContext(AccountContext);
+
+    useEffect(() => {
+        
+        const divGastos = document.querySelector('#divGastos');
+        const divBalance = document.querySelector('#divBalance');
+        const accountSep = document.querySelector('.accountSep');
+        if (gasto){
+            divGastos.classList = 'col-12 col-sm-5 mt-4';
+            divBalance.classList = 'col-12 col-sm-5 mt-4';
+            accountSep.classList = 'accountSep';
+        }else{
+            divGastos.classList = 'd-none';
+            divBalance.classList = 'd-none';
+            accountSep.classList = 'accountSep d-none';
+            };
+    }, [gasto]);
+
     cuentas = cuentas || [];
 
     let cuenta = {};
@@ -25,9 +43,10 @@ export const Gastos = () => {
             total+=Number(concept.totalConcept);
         });
     }
+    cuenta.total = total;
 
   return (
-    <div className='col-12 col-sm-5 mt-4'>
+    <div id='divGastos' className='col-12 col-sm-5 mt-4'>
         <h2>Gastos</h2>
         <hr className='my-0'/>
         <div>
@@ -57,7 +76,11 @@ export const Gastos = () => {
         <button
             id='btnAddGasto'
             className='botonBox mt-1 btn-block w-100 m-auto'
-            onClick={() => setNewGasto(true)}
+            onClick={() => {
+                setNewGasto(newGasto => !newGasto);
+                setGasto(gasto => !gasto);
+                
+            }}
         >
             Agregar Gasto
         </button>

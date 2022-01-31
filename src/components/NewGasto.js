@@ -1,11 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import { AccountContext } from './AccountContext';
-import { NewGastoOption } from './NewGastoOption';
 import { NewGastoDesc } from './NewGastoDesc';
 import { AddMemberGasto } from './AddMemberGasto';
 import { ConfirmGasto } from './ConfirmGasto';
 import { NewGastoTotal } from './NewGastoTotal';
-import { AddMemberGasto2 } from './AddMemberGasto2';
 ;
 
 
@@ -57,7 +55,7 @@ export const NewGasto = ({cuenta}) => {
                         </div>  
         </div>
         <div className='row mt-4 w-100 m-auto'>
-                <AddMemberGasto2 />
+                <AddMemberGasto />
             </div>
         <div id='divConfirmGasto' className='row mt-4 w-100 m-auto'>
             <ConfirmGasto 
