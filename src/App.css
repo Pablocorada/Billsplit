@@ -19,7 +19,7 @@ h2{
 
 }
 
-.btn:focus, input:focus{
+.btn:focus, input:focus, .form-select:focus{
     box-shadow: none !important;
 }
 
@@ -42,6 +42,7 @@ h2{
 
 .botonCancel:hover{
     background-color:rgb(165, 165, 165);
+    border: 2px solid rgb(165, 165, 165) !important;
 }
 
 .botonBox{
@@ -50,11 +51,8 @@ h2{
     border-radius: 20px;
 }
 
-.botonCancel{
-    border: 2px solid rgb(165, 165, 165) !important;
-}
-
-.form-control{
+.form-control, .form-select{
+    font-size: 1rem !important;
     padding-top: 3px !important;
     padding-bottom: 3px !important;
     background-color: rgba(255, 255, 255, 0.85);
@@ -62,6 +60,17 @@ h2{
 
 .list-group-item{
     border: none !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.list-group-item p{
+    margin-bottom: 0px !important;
+}
+
+.list-group hr{
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
 }
 
 .list-group-item:hover{

@@ -13,24 +13,16 @@ import { NewCuenta } from './NewCuenta';
 
 export const MisCuentas = () => {
 
-    let id = 1643307973698;
     let {cuentas,dispatch} = useContext(AccountContext);
+    let {setCurrentId} = useContext(AccountContext);
     const {addCuenta, setAddCuenta} = useContext(AccountContext);
     const {setCuenta} = useContext(AccountContext);
-    const {setCancel} = useContext(AccountContext);
 
     const  [{title}, handleTitleInputChange, resetTitle]  = useForm({
         title: '',
     });
     const  [{name}, handleNameInputChange, resetName]  = useForm({
         name: '',
-    });
-
-    const  [{description}, handleDescInputChange, resetDesc]  = useForm({
-        description: '',
-    });
-    const  [{total}, handleTotalInputChange, resetTotal]  = useForm({
-        total: '',
     });
 
     useEffect(() => {
@@ -52,19 +44,10 @@ export const MisCuentas = () => {
             title: title,
             total: 0,
             members: [],
-            concepts: [{
-                id: 1,
-                description: 'a',
-                totalConcept: 0
-            },
-            {
-                id: 2,
-                description: 'b',
-                totalConcept: 0
-            }
-            ],
+            concepts: [],
             date: new Date(),
         }
+        setCurrentId(newCuenta.id);
         
         const divAddMember = document.querySelector('#divAddMember');
         const inputNewMember = document.getElementsByClassName('inputNewMember');
@@ -72,7 +55,7 @@ export const MisCuentas = () => {
         for(let i=inputNewMember.length-1; i>=0; i--){
             if(inputNewMember[i].value!==''){
                 newCuenta.members.push({
-                    id: new Date().getTime()+2,
+                    id: (new Date().getTime()+Math.random()),
                     name: inputNewMember[i].value,
                     money: 0
                 })
@@ -123,14 +106,14 @@ export const MisCuentas = () => {
 
             <div id='historialBox' className='container w-75 m-auto box d-flex flex-column align-items-around'>
                 <div className='mt-4'>
-                    <h2>Historial de Cuentas</h2>
+                    <h2>Mis Cuentas</h2>
                     <hr className='m-auto w-75'/>
                 </div>
 
                 {
                     cuentas.length===0
                     ?
-                        <h3 className='align-self-center m-auto'>Aún no has guardado ninguna cuenta.</h3>
+                        <h4 className='align-self-center m-auto mt-5'>Aún no tienes ninguna cuenta.</h4>
                     :
                         <CuentaList
                             cuentas={cuentas}
@@ -153,9 +136,7 @@ export const MisCuentas = () => {
                 setAddCuenta={setAddCuenta}
             />
 
-            <Cuenta 
-                id={id}
-            />
+            <Cuenta />
 
             <button 
                 id='btnNewCuenta'

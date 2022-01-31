@@ -2,15 +2,17 @@ import React, { useContext } from 'react';
 import { AccountContext } from './AccountContext';
 import { GastosItem } from './GastosItem';
 
-export const Gastos = ({id}) => {
+export const Gastos = () => {
 
+    let {setNewGasto} = useContext(AccountContext);
+    let {currentId} = useContext(AccountContext);
     let {cuentas} = useContext(AccountContext);
     cuentas = cuentas || [];
 
     let cuenta = {};
 
     cuentas.forEach(element => {
-        if(element.id===id){
+        if(element.id===currentId){
             cuenta = element;
         }
     });
@@ -32,23 +34,30 @@ export const Gastos = ({id}) => {
             <ul className="list-group list-group-flush text-start mt-3">
                 {  
                     concepts.map( (concept,j) => {
-                        return (<GastosItem 
-                            key={concept.id}
-                            concept={concept}
-                            i={j}
-                            />
+                        return (
+                            <>
+                                <GastosItem 
+                                key={concept.id+Math.random()}
+                                concept={concept}
+                                i={j}
+                                />
+                                <hr
+                                key={concept.id+Math.random()}
+                                />
+                            </>
                         );
                     })
                 }
             </ul>
         </div>
-        <div className='row'>
+        <div className='row mt-4'>
             <h3 className='col-6 text-center fw-bold'>Total</h3>
             <h3 className='col-6 text-center'>{total}€</h3>
         </div>
         <button
             id='btnAddGasto'
             className='botonBox mt-1 btn-block w-100 m-auto'
+            onClick={() => setNewGasto(true)}
         >
             Agregar Gasto
         </button>

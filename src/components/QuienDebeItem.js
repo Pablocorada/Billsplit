@@ -1,9 +1,21 @@
 import React from 'react';
 
-export const BalanceItem = ({member}) => {
+export const QuienDebeItem = ({members, cuenta}) => {
+
+    const {name, money} = members || {name:'', money:0};
+    const {total} = cuenta || 0;
+
+    const pagoInd = Math.trunc(Number(total)/members.length);
+
+    members.sort((a,b) => {
+        return (Number(b.money-a.money));
+    })
+
+    console.log(members)
+
   return (
     <div>
-        <li 
+        {/* <li 
             key={member.id+Math.random()}
             className="list-group-item w-100 w-sm-75 mx-0 py-3 bg-transparent d-flex align-items-center justify-content-between"
         >
@@ -17,7 +29,7 @@ export const BalanceItem = ({member}) => {
                     {member.money} €                    
                 </p>
             </div>
-        </li>
+        </li> */}
     </div>
   );
 };
