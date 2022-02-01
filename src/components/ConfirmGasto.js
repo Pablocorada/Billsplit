@@ -35,6 +35,8 @@ export const ConfirmGasto = ({cuenta}) => {
         for(let i=0; i<costGasto.length; i++){
             totalGasto += Number(costGasto[i].value.trim())
         }
+        console.log(totalGasto)
+        console.log(total)
 
         if(totalGasto!==Number(total)) {
             alert('La suma de cada aporte no se corresponde al monto total del gasto!')

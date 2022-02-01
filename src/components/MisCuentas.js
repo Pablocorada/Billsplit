@@ -128,7 +128,7 @@ export const MisCuentas = () => {
             
 
             <div id='historialBox' className='container w-75 m-auto box d-flex flex-column align-items-around'>
-                <div className='mt-4'>
+                <div className='mt-1'>
                     <h2>Mis Cuentas</h2>
                     <hr className='m-auto w-75'/>
                 </div>
@@ -176,6 +176,12 @@ export const MisCuentas = () => {
                     
                     setCancel(true);
                     setBackToAccounts(false);
+                    const divAddMember = document.querySelector('#divAddMember');
+                    const inputNewMember = document.getElementsByClassName('inputNewMember');
+
+                    for(let i=inputNewMember.length-1; i>=0; i--){                        
+                        divAddMember.removeChild(inputNewMember[i]);
+                    }
 
                 }}
                 className='btn btn-outline-success m-auto mt-2 d-block px-5 py-0 py-sm-1 fw-bold'

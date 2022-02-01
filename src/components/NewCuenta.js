@@ -87,6 +87,7 @@ export const NewCuenta = ({title, handleAddMember, handleSubmit, handleTitleInpu
             <button
                 onClick={() => {
                     setCancel(true);
+                    setBackToAccounts(false);
                     const divAddMember = document.querySelector('#divAddMember');
                     const inputNewMember = document.getElementsByClassName('inputNewMember');
 

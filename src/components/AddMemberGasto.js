@@ -24,7 +24,7 @@ export const AddMemberGasto = () => {
         e.preventDefault();
         
         const divNewMemberGasto = document.createElement('div');
-        divNewMemberGasto.className = 'row m-auto justify-content-between align-items-start px-0';
+        divNewMemberGasto.className = 'divWhoPays row m-auto justify-content-between align-items-start px-0';
         divNewMemberGasto.innerHTML = `
             <div class='col-12 col-sm-8 px-0 align-self-end'>
                 <select 
@@ -35,19 +35,18 @@ export const AddMemberGasto = () => {
                     </select>
                 
             </div>
-            <div class='col-12 col-sm-3 mt-1 p-0 d-flex justify-content-center align-content-center'>
-                    <input  
-                        type='text'
-                        name='money'
-                        class='costGasto form-control d-block'
-                        placeholder='Coste...'
-                        autoComplete='off'
-                        value='${money}'
-                        onChange='${ handleMoneyInputChange }'
-                        />
-                        <p class='m-auto ms-2'>€</p>
-                        </div>
-                        `;
+            <div class="input-group col-12 col-sm-3 mt-1 px-0 d-flex justify-content-center align-content-center">
+                <input type="text" 
+                       class="costGasto form-control d-block"
+                       placeholder="Coste..." 
+                       aria-label="Username" 
+                       aria-describedby="input-group-right" 
+                       autoComplete='off'
+                       value='${money}'
+                       onChange='${ handleMoneyInputChange }'>
+                <span class="input-group-text" id="input-group-right-example">€</span>
+            </div>
+            `;
                         
                         
         const divOptionsContain = document.querySelector('#divOptionsContain');
@@ -70,7 +69,7 @@ export const AddMemberGasto = () => {
     <button
         id='btnAddPayMember'
         onClick={handleAddPayMember}
-        className='botonBox mt-1 btn-block w-100 m-auto'
+        className='botonBox btn-block w-100 m-auto'
     >
         Agregar Participante
     </button>

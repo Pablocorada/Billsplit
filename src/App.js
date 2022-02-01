@@ -63,8 +63,8 @@ function App() {
         backToAccounts, 
         setBackToAccounts
       }}>
-        <header className="d-flex justify-content-center align-content-center position-fixed w-100 m-auto">
-          <h1 className='w-75 my-2'>BillShare</h1>
+        <header className="d-flex justify-content-center align-content-center position-fixed w-100">
+          <h1 className='w-75 my-2'>BillSplit</h1>
         </header>
         <main id='main' className='text-center py-3'>
           

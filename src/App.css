@@ -1,21 +1,26 @@
+*{
+    
+    color: rgb(52, 83, 117) !important;
+}
+
 body{
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
     background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 50%,rgba(229, 229, 229,0.04) 50%, rgba(229, 229, 229,0.04) 100%),radial-gradient(circle at 66% 97%, rgba(36, 36, 36,0.04) 0%, rgba(36, 36, 36,0.04) 50%,rgba(46, 46, 46,0.04) 50%, rgba(46, 46, 46,0.04) 100%),radial-gradient(circle at 86% 7%, rgba(40, 40, 40,0.04) 0%, rgba(40, 40, 40,0.04) 50%,rgba(200, 200, 200,0.04) 50%, rgba(200, 200, 200,0.04) 100%),radial-gradient(circle at 15% 16%, rgba(99, 99, 99,0.04) 0%, rgba(99, 99, 99,0.04) 50%,rgba(45, 45, 45,0.04) 50%, rgba(45, 45, 45,0.04) 100%),radial-gradient(circle at 75% 99%, rgba(243, 243, 243,0.04) 0%, rgba(243, 243, 243,0.04) 50%,rgba(37, 37, 37,0.04) 50%, rgba(37, 37, 37,0.04) 100%),linear-gradient(90deg, rgb(34, 222, 237),rgb(143,202,182));
-    padding-top: 6vh;
+    padding-top: 5.5rem;
 }
 
 header{
     background-color:aquamarine;
     top: 0px;
-    height: 6vh;
+    height: 5.5rem;
     z-index: 10;
 }
 
 h1{
-    color:cornflowerblue;
+    color:cornflowerblue !important;
     font-family: 'Righteous', cursive;
     text-shadow: 2px 2px 3px rgb(54, 189, 144);
-    font-size: 6vw !important;
+    font-size: 3.5rem !important;
     z-index: 2 !important;
 }
 
@@ -63,6 +68,15 @@ h2{
     background-color: rgba(255, 255, 255, 0.85);
 }
 
+.input-group-text{
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.divWhoPays{
+    margin-bottom: 5px !important;
+}
+
 .list-group-item{
     border: none !important;
     padding-top: 5px !important;
@@ -92,14 +106,24 @@ h2{
     body, .botonBox, .btn{
         font-size: 14px !important;
     }
+    body{
+        padding-top: 4rem !important;
+    }
+    header{
+        height: 4rem;
+    }
     h1{
-        font-size: xx-large !important;
+        font-size: 2.5rem !important;
     }
     h2{
         font-size: 1.2rem !important;
     }
     .col-form-label, .listWho{
-        font-size: 18px !important;
+        font-size: 1rem !important;
+    }
+    
+    .form-control, .input-group-text, .whoPays{
+        font-size: 0.85rem !important;
     }
     main{
         padding: 0px !important;
@@ -108,13 +132,13 @@ h2{
         padding-top: 0px !important;
     }
     .box{
-        width: 95% !important;
+        width: 90% !important;
         box-shadow: none !important;
         margin-top: 10px !important;
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
-    .list-group-item, .costGasto{
+    .list-group-item{
         width: 100% !important;
     }
     .accountSep{
@@ -125,6 +149,9 @@ h2{
         color: rgb(143, 202, 182) !important;
         opacity: 1;
         box-sizing:content-box;
+    }
+    .divWhoPays{
+        margin-bottom: 10px !important;
     }
 }
 

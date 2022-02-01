@@ -46,7 +46,7 @@ export const NewGasto = ({cuenta}) => {
         </div>
         <div className='row mt-4' id='divAddPayMember'>   
             <div>
-                <label className='col-12 col-form-label text-start fs-5 p-0'>¿Quién pagó?</label>                
+                <label className='col-12 col-form-label text-start fs-5 p-0 mb-2'>¿Quién pagó?</label>                
             </div>         
             <div className='row m-auto justify-content-between align-items-start'
                              id='divOptionsContain'
@@ -54,7 +54,7 @@ export const NewGasto = ({cuenta}) => {
                             
                         </div>  
         </div>
-        <div className='row mt-4 w-100 m-auto'>
+        <div className='row mt-2 w-100 m-auto'>
                 <AddMemberGasto />
             </div>
         <div id='divConfirmGasto' className='row mt-4 w-100 m-auto'>

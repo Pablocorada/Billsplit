@@ -7,17 +7,19 @@ export const NewGastoTotal = () => {
 
   return (
         <>
-            <input  
-                type='text'
-                name='total'
-                id='inputTotal'
-                className='form-control'
-                placeholder='Coste...'
-                autoComplete='off'
-                value={total}
-                onChange={ handleTotalInputChange }
-            />
-            <p className='m-auto ms-2'>€</p>        
+            <div class="input-group col-12 d-flex justify-content-center align-content-center">
+                <input type="text" 
+                       name='total'
+                       id='inputTotal'
+                       className='form-control'
+                       placeholder="Coste..." 
+                       aria-label="Username" 
+                       aria-describedby="input-group-right" 
+                       autoComplete='off'
+                       value={total}
+                       onChange={ handleTotalInputChange } />
+                <span class="input-group-text" id="input-group-right-example">€</span>
+            </div>    
         </>
     );
 };
