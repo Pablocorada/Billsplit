@@ -14,8 +14,6 @@ export const QuienDebeItem = ({members, cuenta}) => {
         member.deuda = member.money - pagoInd;                    
     }
 
-    console.log(members)
-
     const deudaList = [];
 
     for(let i=0; i<members.length; i++){
