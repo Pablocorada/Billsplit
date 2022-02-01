@@ -7,7 +7,7 @@ export const NewGastoTotal = () => {
 
   return (
         <>
-            <div class="input-group col-12 d-flex justify-content-center align-content-center">
+            <div className="input-group col-12 d-flex justify-content-center align-content-center">
                 <input type="text" 
                        name='total'
                        id='inputTotal'
@@ -18,7 +18,7 @@ export const NewGastoTotal = () => {
                        autoComplete='off'
                        value={total}
                        onChange={ handleTotalInputChange } />
-                <span class="input-group-text" id="input-group-right-example">€</span>
+                <span className="input-group-text" id="input-group-right-example">€</span>
             </div>    
         </>
     );

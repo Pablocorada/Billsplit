@@ -58,7 +58,10 @@ export const MisCuentas = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(title.trim().length <= 1) {
+        if(title.trim().length <= 1 || title.trim().length > 30) {
+            alert('El nombre del título debe tener un mínimo dos y un máximo de 30 caracteres.');
+            resetTitle();
+            resetName();
             return;
         };
         
@@ -85,6 +88,17 @@ export const MisCuentas = () => {
             }
             divAddMember.removeChild(inputNewMember[i]);
         }
+
+        if(newCuenta.members.length===0) {
+            alert('Debe haber al menos un participante.')
+            return;
+        };
+        for(let member of newCuenta.members){
+            if(member.name.trim().length <= 1) {
+                alert('Los nombres de los participantes deben tener como mínimo dos caracteres.')
+                return;
+            };
+        }
         
         const action = {
             type: 'add',
@@ -98,10 +112,23 @@ export const MisCuentas = () => {
         
     }
 
-    const handleDelete = () => {
+    const handleDelete = (e) => {
 
+        const currentBtn = e.target;
 
-        /* dispatch(action); */
+        const deleteAccount = document.getElementsByClassName('deleteAccount')
+        let cuenta = [];
+        for(let i=0; i<deleteAccount.length; i++){
+            if(deleteAccount[i]===currentBtn){
+                cuenta = cuentas[i];
+            }
+        }
+        const action = {
+            type: 'delete',
+            payload: cuenta.id,
+        }
+
+        dispatch(action);
     }
 
     const handleAddMember = (e) => {

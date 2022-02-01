@@ -7,7 +7,7 @@ export const listReducer = (state=[],action) => {
             return [action.payload,...state];
 
         case 'delete':
-            return state.filter(todo => todo.id !== action.payload);
+            return state.filter(item => item.id !== action.payload);
     
         default:
             return state;

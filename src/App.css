@@ -98,13 +98,28 @@ h2{
     cursor: pointer;
 }
 
+.accountSepTitle{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    height: 4px !important;
+    color: rgb(143, 202, 182) !important;
+    opacity: 1;
+    background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 50%,rgba(229, 229, 229,0.04) 50%, rgba(229, 229, 229,0.04) 100%),radial-gradient(circle at 66% 97%, rgba(36, 36, 36,0.04) 0%, rgba(36, 36, 36,0.04) 50%,rgba(46, 46, 46,0.04) 50%, rgba(46, 46, 46,0.04) 100%),radial-gradient(circle at 86% 7%, rgba(40, 40, 40,0.04) 0%, rgba(40, 40, 40,0.04) 50%,rgba(200, 200, 200,0.04) 50%, rgba(200, 200, 200,0.04) 100%),radial-gradient(circle at 15% 16%, rgba(99, 99, 99,0.04) 0%, rgba(99, 99, 99,0.04) 50%,rgba(45, 45, 45,0.04) 50%, rgba(45, 45, 45,0.04) 100%),radial-gradient(circle at 75% 99%, rgba(243, 243, 243,0.04) 0%, rgba(243, 243, 243,0.04) 50%,rgba(37, 37, 37,0.04) 50%, rgba(37, 37, 37,0.04) 100%),linear-gradient(90deg, rgb(34, 222, 237),rgb(143,202,182));
+}
+
 .accountSep{
     display: none;
+    margin-top: 50px;
+    height: 4px !important;
+    color: rgb(143, 202, 182) !important;
+    opacity: 1;
+    background-image: radial-gradient(circle at 40% 91%, rgba(251, 251, 251,0.04) 0%, rgba(251, 251, 251,0.04) 50%,rgba(229, 229, 229,0.04) 50%, rgba(229, 229, 229,0.04) 100%),radial-gradient(circle at 66% 97%, rgba(36, 36, 36,0.04) 0%, rgba(36, 36, 36,0.04) 50%,rgba(46, 46, 46,0.04) 50%, rgba(46, 46, 46,0.04) 100%),radial-gradient(circle at 86% 7%, rgba(40, 40, 40,0.04) 0%, rgba(40, 40, 40,0.04) 50%,rgba(200, 200, 200,0.04) 50%, rgba(200, 200, 200,0.04) 100%),radial-gradient(circle at 15% 16%, rgba(99, 99, 99,0.04) 0%, rgba(99, 99, 99,0.04) 50%,rgba(45, 45, 45,0.04) 50%, rgba(45, 45, 45,0.04) 100%),radial-gradient(circle at 75% 99%, rgba(243, 243, 243,0.04) 0%, rgba(243, 243, 243,0.04) 50%,rgba(37, 37, 37,0.04) 50%, rgba(37, 37, 37,0.04) 100%),linear-gradient(90deg, rgb(34, 222, 237),rgb(143,202,182));
 }
+
 
 @media (max-width: 576px){
     body, .botonBox, .btn{
-        font-size: 14px !important;
+        font-size: 1.1rem !important;
     }
     body{
         padding-top: 4rem !important;
@@ -116,14 +131,14 @@ h2{
         font-size: 2.5rem !important;
     }
     h2{
-        font-size: 1.2rem !important;
+        font-size: 1.4rem !important;
     }
     .col-form-label, .listWho{
-        font-size: 1rem !important;
+        font-size: 1.2rem !important;
     }
     
     .form-control, .input-group-text, .whoPays{
-        font-size: 0.85rem !important;
+        font-size: 1rem !important;
     }
     main{
         padding: 0px !important;
@@ -143,12 +158,6 @@ h2{
     }
     .accountSep{
         display: block;
-        width: 100% !important;
-        margin-top: 50px;
-        height: 5px !important;
-        color: rgb(143, 202, 182) !important;
-        opacity: 1;
-        box-sizing:content-box;
     }
     .divWhoPays{
         margin-bottom: 10px !important;

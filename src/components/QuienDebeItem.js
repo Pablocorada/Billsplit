@@ -4,7 +4,7 @@ export const QuienDebeItem = ({members, cuenta}) => {
 
     const {total} = cuenta || 0;
 
-    const pagoInd = Math.trunc(Number(total)/members.length);
+    const pagoInd = (Number(total)/members.length).toFixed(2);
 
     members.sort((a,b) => {
         return (Number(b.money-a.money));
@@ -28,14 +28,14 @@ export const QuienDebeItem = ({members, cuenta}) => {
 
             if(deudaMayor >= Math.abs(deudaMenor)){
                 const textoDeuda = `
-                    ${members[j].name} le debe ${Math.abs(deudaMenor)}€ a ${members[i].name}
+                    ${members[j].name} le debe ${(Math.abs(deudaMenor).toFixed(2))}€ a ${members[i].name}
                 `;
                 members[i].deuda -= Math.abs(deudaMenor);
                 members[j].deuda = 0;
                 deudaList.push(textoDeuda);
             }else{
                 const textoDeuda = `
-                    ${members[j].name} le debe ${Math.abs(deudaMayor)}€ a ${members[i].name}
+                    ${members[j].name} le debe ${(Math.abs(deudaMayor).toFixed(2))}€ a ${members[i].name}
                 `;
                 members[j].deuda += Math.abs(deudaMayor);
                 members[i].deuda = 0;

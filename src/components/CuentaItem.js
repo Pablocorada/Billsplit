@@ -15,7 +15,7 @@ export const CuentaItem = ({cuenta,i,showCuenta, handleDelete}) => {
                 </span>
                 <button 
                     type="button" 
-                    className="btn-close btn-sm" 
+                    className="deleteAccount btn-close btn-sm" 
                     aria-label="Close"
                     onClick={handleDelete}
                     >

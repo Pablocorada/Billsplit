@@ -39,7 +39,11 @@ export const Cuenta = () => {
     });
 
   return (
-    <div id='cuentaBox' className='box w-75'>
+    <div id='cuentaBox' className='box w-75 pt-3'>
+        <div className='row justify-content-center'>
+            <h1 className='mt-3 mb-0 fs-1'>{currentCuenta.title}</h1>
+            <hr className='accountSepTitle'/>
+        </div>
         <div className='row justify-content-around'>
             <NewGasto cuenta={currentCuenta} />
             <Gastos />

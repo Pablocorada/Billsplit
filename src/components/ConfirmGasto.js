@@ -23,20 +23,27 @@ export const ConfirmGasto = ({cuenta}) => {
     const handleConfirmGasto = (e) => {
         e.preventDefault();
         if(description.trim().length <= 1 || total<=0)  {
-            alert('Debes agregar una descripción y un precio al gasto')
+            alert('Debes agregar una descripción y un precio al gasto.')
             return;
         };
-
+        
         let totalGasto = 0;
         const costGasto = document.getElementsByClassName('costGasto');
         const whoPays = document.getElementsByClassName('whoPays');
         const whoPaysOptions = document.getElementsByClassName('whoPaysOptions');
-
+        
+        if(whoPays.length===0)  {
+            alert('Debes asignar el gasto a al menos un participante.')
+            return;
+        };
+        
         for(let i=0; i<costGasto.length; i++){
+            if(isNaN(Number(costGasto[i].value.trim())) || isNaN(Number(total))){
+                alert('Debes asignar valores numéricos a los gastos.')
+                return;
+            }
             totalGasto += Number(costGasto[i].value.trim())
         }
-        console.log(totalGasto)
-        console.log(total)
 
         if(totalGasto!==Number(total)) {
             alert('La suma de cada aporte no se corresponde al monto total del gasto!')
