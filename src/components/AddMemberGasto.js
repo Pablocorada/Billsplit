@@ -24,9 +24,9 @@ export const AddMemberGasto = () => {
         e.preventDefault();
         
         const divNewMemberGasto = document.createElement('div');
-        divNewMemberGasto.className = 'divWhoPays row m-auto justify-content-between align-items-start px-0';
+        divNewMemberGasto.className = 'divWhoPays row m-auto justify-content-between px-0';
         divNewMemberGasto.innerHTML = `
-            <div class='col-12 col-sm-8 px-0 align-self-end'>
+            <div class='col-12 col-sm-8 align-self-end'>
                 <select 
                 class="whoPays form-select form-select-sm"
                     name='name'
@@ -35,17 +35,17 @@ export const AddMemberGasto = () => {
                     </select>
                 
             </div>
-            <div class="input-group col-12 col-sm-3 mt-1 px-0 d-flex justify-content-center align-content-center">
+            <div class="input-group col-12 col-sm-4 mt-1 d-flex justify-content-center align-content-center">
                 <input type="text" 
-                       class="costGasto form-control d-block"
-                       placeholder="Coste..." 
-                       aria-label="Username" 
-                       aria-describedby="input-group-right" 
-                       autoComplete='off'
-                       value='${money}'
-                       onChange='${ handleMoneyInputChange }'>
+                    class="costGasto form-control d-block"
+                    placeholder="Pago..." 
+                    aria-label="Username" 
+                    aria-describedby="input-group-right" 
+                    autoComplete='off'
+                    value='${money}'
+                    onChange='${ handleMoneyInputChange }'>
                 <span class="input-group-text" id="input-group-right-example">€</span>
-            </div>
+            </div>   
             `;
                         
                         

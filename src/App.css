@@ -9,6 +9,22 @@ body{
     padding-top: 5.5rem;
 }
 
+body, .botonBox, .btn{
+    font-size: 1.4rem !important;
+}
+
+h2{
+    font-size: 1.8rem !important;
+}
+
+.col-form-label, .listWho{
+    font-size: 1.4rem !important;
+}
+
+.form-control, .input-group-text, .whoPays, .list-group-item{
+    font-size: 1.4rem !important;
+}
+
 header{
     background-color:aquamarine;
     top: 0px;
@@ -62,7 +78,7 @@ h2{
 }
 
 .form-control, .form-select{
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
     padding-top: 3px !important;
     padding-bottom: 3px !important;
     background-color: rgba(255, 255, 255, 0.85);
@@ -118,8 +134,8 @@ h2{
 
 
 @media (max-width: 576px){
-    body, .botonBox, .btn{
-        font-size: 1.1rem !important;
+    body, .botonBox, .btn, .form-control{
+        font-size: 1.2rem !important;
     }
     body{
         padding-top: 4rem !important;
@@ -131,14 +147,11 @@ h2{
         font-size: 2.5rem !important;
     }
     h2{
-        font-size: 1.4rem !important;
-    }
-    .col-form-label, .listWho{
-        font-size: 1.2rem !important;
+        font-size: 1.7rem !important;
     }
     
-    .form-control, .input-group-text, .whoPays{
-        font-size: 1rem !important;
+    .col-form-label, .listWho, .input-group-text, .whoPays, .list-group-item{
+        font-size: 1.3rem !important;
     }
     main{
         padding: 0px !important;

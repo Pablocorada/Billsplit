@@ -48,13 +48,13 @@ export const NewGasto = ({cuenta}) => {
             <div>
                 <label className='col-12 col-form-label text-start fs-5 p-0 mb-2'>¿Quién pagó?</label>                
             </div>         
-            <div className='row m-auto justify-content-between align-items-start'
+            <div className='m-auto px-0'
                              id='divOptionsContain'
                              key={(new Date().getTime()+Math.random())}>
                             
                         </div>  
         </div>
-        <div className='row mt-2 w-100 m-auto'>
+        <div className='mt-2 w-100 m-auto px-0'>
                 <AddMemberGasto />
             </div>
         <div id='divConfirmGasto' className='row mt-4 w-100 m-auto'>
