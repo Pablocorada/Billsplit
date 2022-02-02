@@ -3,7 +3,7 @@ import { AccountContext } from './AccountContext';
 
 export const ConfirmGasto = ({cuenta}) => {
 
-    let {setNewGasto, setNumberOptions, resetDescription, resetTotal} = useContext(AccountContext);
+    let {setNewGasto, setNumberOptions, resetDescription, resetTotal, cuentas} = useContext(AccountContext);
     const {setGasto} = useContext(AccountContext);
 
     const members = useMemo(() => {
@@ -70,6 +70,7 @@ export const ConfirmGasto = ({cuenta}) => {
         resetDescription();
         setNewGasto(false);
         setNumberOptions([1]);
+        localStorage.setItem('cuentas', JSON.stringify(cuentas));
         
     }
 
