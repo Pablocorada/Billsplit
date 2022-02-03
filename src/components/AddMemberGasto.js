@@ -35,7 +35,7 @@ export const AddMemberGasto = () => {
                     </select>
                 
             </div>
-            <div class="input-group col-12 col-sm-4 mt-1 d-flex justify-content-center align-content-center">
+            <div class="col-12 col-sm-4 mt-1 d-flex justify-content-center align-content-center">
                 <input type="text" 
                     class="costGasto form-control d-block"
                     placeholder="Pago..." 
