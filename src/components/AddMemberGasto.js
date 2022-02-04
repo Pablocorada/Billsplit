@@ -26,7 +26,7 @@ export const AddMemberGasto = () => {
         const divNewMemberGasto = document.createElement('div');
         divNewMemberGasto.className = 'divWhoPays row m-auto justify-content-between px-0';
         divNewMemberGasto.innerHTML = `
-            <div class='col-12 col-sm-8 align-self-end'>
+            <div class='col-12 col-sm-8'>
                 <select 
                 class="whoPays form-select form-select-sm"
                     name='name'
@@ -35,7 +35,7 @@ export const AddMemberGasto = () => {
                     </select>
                 
             </div>
-            <div class="col-12 col-sm-4 mt-1 d-flex justify-content-center align-content-center">
+            <div class="inputCostGasto col-12 col-sm-4 input-group d-flex justify-content-center align-content-center">
                 <input type="text" 
                     class="costGasto form-control d-block"
                     placeholder="Pago..." 
@@ -56,7 +56,7 @@ export const AddMemberGasto = () => {
         members.forEach(member => {
             const option = document.createElement('option');
             option.className ='whoPaysOptions';
-            option.key = (new Date().getTime()+Math.random());
+            option.key = (new Date().getTime()+2);
             option.value = member.name
             option.innerHTML = member.name;
     

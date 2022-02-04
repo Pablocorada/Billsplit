@@ -4,7 +4,7 @@ export const CuentaItem = ({cuenta,i,showCuenta, handleDelete}) => {
     return (
         <div>
             <li 
-                key={cuenta.id}
+                key={Number(cuenta.id)}
                 className="list-group-item selectable-list w-75 m-auto py-3 bg-transparent d-flex align-items-center justify-content-between"
             >
                 <span 

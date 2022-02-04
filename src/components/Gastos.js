@@ -44,29 +44,26 @@ export const Gastos = () => {
         });
     }
     cuenta.total = total;
+    cuenta.id = cuenta.id || 0;
 
   return (
     <div id='divGastos' className='col-12 col-sm-5 mt-4'>
         <h2>Gastos</h2>
         <hr className='my-0'/>
         <div>
-            <ul className="list-group list-group-flush text-start mt-3">
-                {  
-                    concepts.map( (concept,j) => {
-                        return (
-                            <>
-                                <GastosItem 
-                                key={concept.id+Math.random()}
-                                concept={concept}
-                                i={j}
-                                />
-                                <hr
-                                key={concept.id+Math.random()}
-                                />
-                            </>
-                        );
-                    })
-                }
+            <ul
+                className="list-group list-group-flush text-start mt-3">
+                    {  
+                        concepts.map( (concept,j) => {
+                            return (
+                                    <GastosItem 
+                                        key={(Number(concept.id))}
+                                        concept={concept}
+                                        i={j}
+                                    />
+                            );
+                        })
+                    }
             </ul>
         </div>
         <div className='row mt-4'>

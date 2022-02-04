@@ -46,20 +46,15 @@ export const QuienDebeItem = ({members, cuenta}) => {
 
 
   return (
-    <>
-        {
             deudaList.map(textoDeuda => {
                 return (
-                    <>
                         <li 
-                        className="listWho w-75 mb-0 py-3 m-auto fs-5 bg-transparent"
+                            key={Number(cuenta.id)+Math.random()}
+                            className="listWho w-75 mb-0 py-3 m-auto fs-5 bg-transparent"
                         >
                             {textoDeuda}
-                        </li>                
-                    </>                    
+                        </li>                    
                 )
             })
-        }
-    </>
   );
 };

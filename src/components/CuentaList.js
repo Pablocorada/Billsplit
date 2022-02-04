@@ -8,7 +8,7 @@ export const CuentaList = ({cuentas,showCuenta, handleDelete}) => {
                 cuentas.map( (cuenta,i) => {
                     
                     return (<CuentaItem 
-                        key={cuenta.id}
+                        key={Number(cuenta.id)}
                         cuenta={cuenta}
                         i={i}
                         handleDelete={handleDelete}

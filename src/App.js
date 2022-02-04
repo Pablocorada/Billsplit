@@ -18,6 +18,7 @@ function App() {
   const [cuenta, setCuenta] = useState(false);
   const [cancel, setCancel] = useState(true);
   const [gasto, setGasto] = useState(true);
+  const [newMemberCuenta, setNewMemberCuenta] = useState(false);
   const [currentId, setCurrentId] = useState(0);
   const [newGasto, setNewGasto] = useState(0);
   const [numberOptions, setNumberOptions] = useState([1]);
@@ -29,6 +30,9 @@ function App() {
   const  [{total}, handleTotalInputChange, resetTotal]  = useForm({
     total: '',
   });
+  const  [{name}, handleNameInputChange, resetNameInput]  = useForm({
+    name: '',
+  });   
 
   if(cuentas.length > 10){
     cuentas.splice(10, cuentas.length-10);
@@ -56,12 +60,17 @@ function App() {
         total, 
         handleTotalInputChange, 
         resetTotal,
+        name, 
+        handleNameInputChange, 
+        resetNameInput,
         inputOption, 
         setInputOption,
         gasto, 
         setGasto,
         backToAccounts, 
-        setBackToAccounts
+        setBackToAccounts,
+        newMemberCuenta, 
+        setNewMemberCuenta
       }}>
         <header className="d-flex justify-content-center align-content-center position-fixed w-100">
           <h1 className='w-75 my-2'>BillSplit</h1>

@@ -31,6 +31,7 @@ export const ConfirmGasto = ({cuenta}) => {
         const costGasto = document.getElementsByClassName('costGasto');
         const whoPays = document.getElementsByClassName('whoPays');
         const whoPaysOptions = document.getElementsByClassName('whoPaysOptions');
+        let membersCost = [];
         
         if(whoPays.length===0)  {
             alert('Debes asignar el gasto a al menos un participante.')
@@ -43,6 +44,12 @@ export const ConfirmGasto = ({cuenta}) => {
                 return;
             }
             totalGasto += Number(costGasto[i].value.trim())
+            membersCost.push(
+                {
+                    whoPays: whoPays[i].value.trim(),
+                    costGasto: costGasto[i].value.trim()
+                }
+            )
         }
 
         if(totalGasto!==Number(total)) {
@@ -61,7 +68,8 @@ export const ConfirmGasto = ({cuenta}) => {
         const newGasto = {            
             id: (new Date().getTime() + Math.random()),
             description: description,
-            totalConcept: total
+            totalConcept: total,
+            membersCost: membersCost,
         }        
 
         cuenta.concepts.push(newGasto);

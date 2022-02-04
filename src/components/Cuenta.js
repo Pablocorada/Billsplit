@@ -3,6 +3,7 @@ import { AccountContext } from './AccountContext';
 import { Balance } from './Balance';
 import { Gastos } from './Gastos';
 import { NewGasto } from './NewGasto';
+import { NewMemberCuenta } from './NewMemberCuenta';
 import { QuienDebe } from './QuienDebe';
 
 export const Cuenta = () => {
@@ -45,6 +46,7 @@ export const Cuenta = () => {
             <hr className='accountSepTitle'/>
         </div>
         <div className='row justify-content-around'>
+            <NewMemberCuenta cuenta={currentCuenta} />
             <NewGasto cuenta={currentCuenta} />
             <Gastos />
             <hr className='accountSep'/>

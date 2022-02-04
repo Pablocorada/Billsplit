@@ -29,7 +29,7 @@ export const QuienDebe = () => {
             <ul className="list-group text-start mt-3">
                 {                          
                     <QuienDebeItem 
-                    key={members.id+Math.random()}
+                    key={Number(cuenta.id)+Math.random()}
                     members={members}
                     cuenta={cuenta}
                     />                               

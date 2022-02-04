@@ -93,6 +93,27 @@ h2{
     margin-bottom: 5px !important;
 }
 
+.inputCostGasto{
+    width: calc(100*4%/12) !important;
+}
+
+.btn-group{
+    
+    display: block !important;
+    width: 100% !important;
+}
+.dropdown-toggle{
+    border: 0px !important;
+    width: 100% !important;
+}
+
+.dropdown-menu{
+    box-shadow: inset -1px -1px 4px 0px rgba(73, 112, 158, 0.6), inset 0px 2px 8px 0px rgb(255, 255, 255);
+    border-radius: 10px !important;
+    background-color: rgb(170, 253, 226);
+    width: 100%;
+}
+
 .list-group-item{
     border: none !important;
     padding-top: 5px !important;
@@ -175,6 +196,11 @@ h2{
     .divWhoPays{
         margin-bottom: 10px !important;
     }
+    .inputCostGasto{
+        width: 100% !important;
+        margin-top: 0.25rem;
+    }
+    
 }
 
 @media (min-width: 1000px){
