@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AccountContext } from './AccountContext';
+import { AccountContext } from '../AccountContext';
 import { QuienDebeItem } from './QuienDebeItem';
 
 export const QuienDebe = () => {
@@ -16,9 +16,9 @@ export const QuienDebe = () => {
         }
     });
 
-    let members = [];
-    if(cuenta.members){
-        members = cuenta.members;
+    let participantes = [];
+    if(cuenta.participantes){
+        participantes = cuenta.participantes;
     }
 
   return (
@@ -30,7 +30,7 @@ export const QuienDebe = () => {
                 {                          
                     <QuienDebeItem 
                     key={Number(cuenta.id)+Math.random()}
-                    members={members}
+                    participantes={participantes}
                     cuenta={cuenta}
                     />                               
                 }

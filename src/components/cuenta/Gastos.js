@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { AccountContext } from './AccountContext';
+import { AccountContext } from '../AccountContext';
 import { GastosItem } from './GastosItem';
 
 export const Gastos = () => {
@@ -36,14 +36,14 @@ export const Gastos = () => {
     });
 
     let total = 0;
-    let concepts = [];
-    if(cuenta.concepts){
-        concepts = cuenta.concepts;
-        concepts.forEach(concept => {
-            total+=Number(concept.totalConcept);
+    let gastos = [];
+    if(cuenta.gastos){
+        gastos = cuenta.gastos;
+        gastos.forEach(gasto => {
+            total+=Number(gasto.precio);
         });
     }
-    cuenta.total = total;
+    cuenta.precioTotal = total;
     cuenta.id = cuenta.id || 0;
 
   return (
@@ -54,11 +54,11 @@ export const Gastos = () => {
             <ul
                 className="list-group list-group-flush text-start mt-3">
                     {  
-                        concepts.map( (concept,j) => {
+                        gastos.map( (gasto,j) => {
                             return (
                                     <GastosItem 
-                                        key={(Number(concept.id))}
-                                        concept={concept}
+                                        key={gasto.id}
+                                        gasto={gasto}
                                         i={j}
                                     />
                             );

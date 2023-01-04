@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AccountContext } from './AccountContext';
+import { AccountContext } from '../AccountContext';
 
 export const NewGastoTotal = () => {
 

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { AccountContext } from './AccountContext';
+import { AccountContext } from '../AccountContext';
 import { BalanceItem } from './BalanceItem';
 
 export const Balance = () => {
@@ -17,9 +17,9 @@ export const Balance = () => {
         }
     });
 
-    let members = [];
-    if(cuenta.members){
-        members = cuenta.members;
+    let participantes = [];
+    if(cuenta.participantes){
+        participantes = cuenta.participantes;
     }
 
     return (
@@ -31,11 +31,11 @@ export const Balance = () => {
                     <ul className="list-group list-group-flush text-start mt-3">
                         
                         {  
-                            members.map( (member) => {
+                            participantes.map( (participante) => {
                                 return (
                                     <BalanceItem 
-                                    key={Number(member.id)+Math.random()}
-                                    member={member}
+                                    key={Number(participante.id)+Math.random()}
+                                    participante={participante}
                                     />
                                 );                                    
                             })

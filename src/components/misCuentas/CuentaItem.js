@@ -11,7 +11,7 @@ export const CuentaItem = ({cuenta,i,showCuenta, handleDelete}) => {
                     className='align-self-center d-block w-100'
                     onClick={() => {showCuenta (cuenta.id)}} 
                 >
-                    {i + 1}. {cuenta.title}
+                    {i + 1}. {cuenta.nombre}
                 </span>
                 <button 
                     type="button" 

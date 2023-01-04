@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { AccountContext } from './AccountContext';
+import { AccountContext } from '../AccountContext';
 import { NewGastoDesc } from './NewGastoDesc';
 import { AddMemberGasto } from './AddMemberGasto';
 import { ConfirmGasto } from './ConfirmGasto';

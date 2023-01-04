@@ -1,46 +1,35 @@
 import React, { useContext, useEffect } from 'react';
-import { AccountContext } from './AccountContext';
+import { AccountContext } from '../AccountContext';
 
 export const NewCuenta = ({title, handleAddMember, handleSubmit, handleTitleInputChange}) => {
   
     const {addCuenta, setAddCuenta} = useContext(AccountContext);
     const {setCuenta} = useContext(AccountContext);
-    const {cancel, setCancel, setGasto, setBackToAccounts} = useContext(AccountContext);
+    const {setGasto, setBackToAccounts} = useContext(AccountContext);
 
     useEffect(() => {
       
         const addCuentaBox = document.querySelector('#addCuentaBox');
         const historialBox = document.querySelector('#historialBox');
-        const cuentaBox = document.querySelector('#cuentaBox');
         if (addCuenta){
             addCuentaBox.classList = 'container w-75 m-auto box py-4 px-5'
             historialBox.classList = 'd-none'
-            cuentaBox.classList = 'd-none'
-            setCuenta(false)
-            setCancel(false)
-            setGasto(true)
             setBackToAccounts(true)
-        }else{
-            addCuentaBox.classList = 'd-none'
         };
-    }, [addCuenta,setCuenta,setCancel,setBackToAccounts,setGasto]);
+    }, [addCuenta,setCuenta,setBackToAccounts,setGasto]);
     
     useEffect(() => {
       
         const addCuentaBox = document.querySelector('#addCuentaBox');
         const historialBox = document.querySelector('#historialBox');
-        const cuentaBox = document.querySelector('#cuentaBox');
-        if (cancel){
+        if (!addCuenta){
             addCuentaBox.classList = 'd-none'
             historialBox.classList = 'container w-75 m-auto box py-4 px-5'
-            cuentaBox.classList = 'd-none'
             setCuenta(false)
             setAddCuenta(false)
-            setGasto(false)
-        }else{
-            historialBox.classList = 'd-none'
         };
-    }, [cancel,setCuenta,setAddCuenta, setGasto]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [addCuenta]);
   
     return (
 
@@ -86,8 +75,10 @@ export const NewCuenta = ({title, handleAddMember, handleSubmit, handleTitleInpu
             </button>
             <button
                 onClick={(e) => {
+
                     e.preventDefault();
-                    setCancel(true);
+                    
+                    setAddCuenta(false)
                     setBackToAccounts(false);
                     const divAddMember = document.querySelector('#divAddMember');
                     const inputNewMember = document.getElementsByClassName('inputNewMember');

@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { useForm } from '../hooks/useForm';
-import { AccountContext } from './AccountContext';
+import { useForm } from '../../hooks/useForm';
+import { AccountContext } from '../AccountContext';
 
 export const AddMemberGasto = () => {
 
@@ -16,7 +16,7 @@ export const AddMemberGasto = () => {
                 currentCuenta = element;
             }
     });
-    const members = currentCuenta.members || [{}] ; 
+    const participantes = currentCuenta.participantes || [{}] ; 
 
     
     const handleAddPayMember = (e) => {
@@ -53,12 +53,12 @@ export const AddMemberGasto = () => {
         divOptionsContain.appendChild(divNewMemberGasto);
         
         const selectMember = document.querySelectorAll('.whoPays');
-        members.forEach(member => {
+        participantes.forEach(member => {
             const option = document.createElement('option');
             option.className ='whoPaysOptions';
             option.key = (new Date().getTime()+2);
-            option.value = member.name
-            option.innerHTML = member.name;
+            option.value = member.nombre
+            option.innerHTML = member.nombre;
     
             selectMember[selectMember.length-1].appendChild(option);
         });
